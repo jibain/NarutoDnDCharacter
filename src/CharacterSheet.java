@@ -42,7 +42,6 @@ public class CharacterSheet {
         public static void main(String[] args) {
             boolean continuePlaying = true;
             while (continuePlaying) {
-                // Prompt user for action
                 System.out.println("Choose an action: roll 'skill', 'save', 'fireball', 'phoenix', 'dragon', 'fireball shower', 'phoenix fire', 'fire whip', 'ember bomb', 'end'");
                 String action = scanner.nextLine();
 
@@ -90,68 +89,65 @@ public class CharacterSheet {
             System.out.println("Goodbye!");
         }
 
-        // Perform a skill check based on user input
         private static void performSkillCheck() {
-            // Prompt user to select a skill
             System.out.println("Select a skill: 'acrobatics', 'animal handling', 'arcana', 'athletics', 'deception', 'history', 'insight', 'intimidation', 'investigation', 'medicine', 'nature', 'perception', 'performance', 'persuasion', 'religion', 'sleight of hand', 'stealth', 'survival'");
             String skill = scanner.nextLine();
 
-            // Roll a d20 and add modifier based on the selected skill
             int modifier = 0;
             switch (skill.toLowerCase()) {
                 case "acrobatics":
-                    modifier = 1; // Example modifier for Acrobatics
+                    modifier = 1;
                     break;
                 case "animal handling":
-                    modifier = 2; // Example modifier for Animal Handling
+                    modifier = 2;
                     break;
                 case "arcana":
-                    modifier = 2; // Example modifier for Arcana
+                    modifier = 2;
                     break;
                 case "athletics":
-                    modifier = 3; // Example modifier for Athletics
+                    modifier = 3;
                     break;
                 case "deception":
-                    modifier = 0; // Example modifier for Deception
+                    modifier = 0;
                     break;
                 case "history":
-                    modifier = 2; // Example modifier for History
+                    modifier = 2;
                     break;
                 case "insight":
-                    modifier = 2; // Example modifier for Insight
+                    modifier = 2;
                     break;
                 case "intimidation":
-                    modifier = 0; // Example modifier for Intimidation
+                    modifier = 0;
                     break;
                 case "investigation":
-                    modifier = 4; // Example modifier for Investigation
+                    modifier = 4;
                     break;
                 case "medicine":
-                    modifier = 2; // Example modifier for Medicine
+                    modifier = 2;
                     break;
                 case "nature":
-                    modifier = 2; // Example modifier for Nature
+                    modifier = 2;
                     break;
                 case "perception":
-                    modifier = 6; // Example modifier for Perception
+                    modifier = 6;
                     break;
                 case "performance":
-                    modifier = 0; // Example modifier for Performance
+                    modifier = 0;
                     break;
                 case "persuasion":
-                    modifier = 0; // Example modifier for Persuasion
+                    modifier = 0;
                     break;
                 case "religion":
-                    modifier = 2; // Example modifier for Religion
+                    modifier = 2;
                     break;
                 case "sleight of hand":
-                    modifier = 3; // Example modifier for Sleight of Hand
+                    modifier = 3;
                     break;
                 case "stealth":
-                    modifier = 7; // Example modifier for Stealth
+                    modifier = 7;
                     break;
                 case "survival":
-                    modifier = 2; // Example modifier for Survival
+                    modifier = 2;
                     break;
                 default:
                     System.out.println("Invalid skill.");
@@ -166,32 +162,30 @@ public class CharacterSheet {
             System.out.println("You rolled a d20. Result: " + rollResult);
         }
 
-        // Perform a saving throw based on user input
+
         private static void performSavingThrow() {
-            // Prompt user to select a saving throw
             System.out.println("Select a saving throw: 'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'");
             String save = scanner.nextLine();
 
-            // Roll a d20 and add modifier based on the selected saving throw
             int modifier = 0;
             switch (save.toLowerCase()) {
                 case "strength":
-                    modifier = 4; // Example modifier for Strength saving throw
+                    modifier = 4;
                     break;
                 case "dexterity":
-                    modifier = 3; // Example modifier for Dexterity saving throw
+                    modifier = 3;
                     break;
                 case "constitution":
-                    modifier = 5; // Example modifier for Constitution saving throw
+                    modifier = 5;
                     break;
                 case "intelligence":
-                    modifier = 2; // Example modifier for Intelligence saving throw
+                    modifier = 2;
                     break;
                 case "wisdom":
-                    modifier = 1; // Example modifier for Wisdom saving throw
+                    modifier = 1;
                     break;
                 case "charisma":
-                    modifier = 3; // Example modifier for Charisma saving throw
+                    modifier = 3;
                     break;
                 default:
                     System.out.println("Invalid saving throw.");
@@ -201,8 +195,6 @@ public class CharacterSheet {
             int result = rollD20() + modifier;
             System.out.println("Saving throw result for " + save + ": " + result);
         }
-
-        // Fire Release: Fireball Jutsu
         private static void castFireballJutsu() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -213,7 +205,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Phoenix Sage Fire Technique
         private static void castPhoenixSageFireTechnique() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -224,7 +215,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Dragon Fire Technique
         private static void castDragonFireTechnique() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -235,7 +225,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Great Fireball Shower
         private static void castGreatFireballShower() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -246,7 +235,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Phoenix Fire Technique
         private static void castPhoenixFireTechnique() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -257,7 +245,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Fire Whip
         private static void castFireWhip() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -268,7 +255,6 @@ public class CharacterSheet {
             }
         }
 
-        // Fire Release: Ember Bomb
         private static void castEmberBomb() {
             if (chakraPoints >= 5) {
                 decrementChakra(5);
@@ -278,7 +264,6 @@ public class CharacterSheet {
                 System.out.println("Not enough chakra to cast Ember Bomb.");
             }
         }
-        // Roll damage based on number of dice and sides
         private static int rollDamage(int numDice, int sides) {
             int totalDamage = 0;
             for (int i = 0; i < numDice; i++) {
@@ -287,12 +272,10 @@ public class CharacterSheet {
             return totalDamage;
         }
 
-        // Roll a 20-sided die
         private static int rollD20() {
             return random.nextInt(20) + 1;
         }
 
-        // Decrement chakra points
         private static void decrementChakra(int cost) {
             chakraPoints -= cost;
         }
