@@ -190,6 +190,7 @@ public class NinjaCharacter {
     private void castDragonFireTechnique() {
         if (chakraPoints >= 5) {
             decrementChakra(5);
+            int attackRoll = attackRoll(rollD20(), 5);
             int damage = rollDamage(2, 8);
             System.out.println("You cast Dragon Fire Technique! Damage: " + damage);
         } else {
@@ -200,6 +201,7 @@ public class NinjaCharacter {
     private void castGreatFireballShower() {
         if (chakraPoints >= 5) {
             decrementChakra(5);
+            int attackRoll = attackRoll(rollD20(), 5);
             int damage = rollDamage(2, 6);
             System.out.println("You cast Great Fireball Shower! Damage: " + damage + " to all targets in a 10-foot radius");
         } else {
@@ -210,6 +212,7 @@ public class NinjaCharacter {
     private void castPhoenixFireTechnique() {
         if (chakraPoints >= 5) {
             decrementChakra(5);
+            int attackRoll = attackRoll(rollD20(), 5);
             int damage = rollDamage(2, 6);
             System.out.println("You cast Phoenix Fire Technique! Damage: " + damage);
         } else {
@@ -230,6 +233,7 @@ public class NinjaCharacter {
     private void castEmberBomb() {
         if (chakraPoints >= 5) {
             decrementChakra(5);
+            int attackRoll = attackRoll(rollD20(), 5);
             int damage = rollDamage(1, 6);
             System.out.println("You cast Ember Bomb! Damage: " + damage + " in a 5-foot radius");
         } else {
