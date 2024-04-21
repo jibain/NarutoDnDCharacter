@@ -13,9 +13,9 @@ public class NinjaCharacter {
     public void startGame() {
         boolean continuePlaying = true;
         while (continuePlaying) {
-            System.out.println("Choose an action:'roll','init','skill','save', 'fireball', 'phoenix', 'erupting flame', 'blazing hands', 'flame bolt', 'fire whip', 'flame strike', 'seal','sneak attack', 'end'");
-            String action = scanner.nextLine();
-            switch (action.toLowerCase()) {
+            System.out.println("Choose an action: 'roll', 'init', 'skill', 'save', 'action', 'bonus action', 'end'");
+            String action = scanner.nextLine().toLowerCase();
+            switch (action) {
                 case "roll":
                     rollD20AndDisplayResult();
                     break;
@@ -29,44 +29,73 @@ public class NinjaCharacter {
                 case "save":
                     performSavingThrow();
                     break;
-                case "fireball":
-                    castFireballJutsu();
+                case "action":
+                    handleAction();
                     break;
-                case "phoenix":
-                    castPhoenixSageFireTechnique();
-                    break;
-                case "erupting flame":
-                    castEruptingFlame();
-                    break;
-                case "blazing hands":
-                    castBlazingHands();
-                    break;
-                case "flame bolt":
-                    castFlameBolt();
-                    break;
-                case "fire whip":
-                    castFireWhip();
-                    break;
-                case "flame strike":
-                    castFlameStrike();
-                    break;
-                case "seal":
-                    castSealingJutsu();
-                    break;
-                case "sneak attack":
-                    rollSneakAttack();
+                case "bonus action":
+                    handleBonusAction();
                     break;
                 case "end":
                     continuePlaying = false;
                     break;
                 default:
                     System.out.println("Invalid action.");
+                    break;
             }
 
             System.out.println("Remaining Chakra Points: " + chakraPoints);
         }
 
         System.out.println("Long resting... Run again to start");
+    }
+
+    private void handleAction() {
+        System.out.println("Choose an action: 'fireball', 'phoenix', 'erupting flame', 'blazing hands', 'flame bolt', 'fire whip', 'flame strike', 'seal'");
+        String action = scanner.nextLine().toLowerCase();
+
+        switch (action) {
+            case "fireball":
+                castFireballJutsu();
+                break;
+            case "phoenix":
+                castPhoenixSageFireTechnique();
+                break;
+            case "erupting flame":
+                castEruptingFlame();
+                break;
+            case "blazing hands":
+                castBlazingHands();
+                break;
+            case "flame bolt":
+                castFlameBolt();
+                break;
+            case "fire whip":
+                castFireWhip();
+                break;
+            case "flame strike":
+                castFlameStrike();
+                break;
+            case "seal":
+                castSealingJutsu();
+                break;
+            default:
+                System.out.println("Invalid action.");
+                break;
+        }
+    }
+
+    private void handleBonusAction() {
+        System.out.println("Choose a bonus action: sneak attack");
+        String baction = scanner.nextLine().toLowerCase();
+
+        switch (baction) {
+            case "sneak attack":
+                rollSneakAttack();
+                break;
+            default:
+                System.out.println("Invalid action.");
+                break;
+        }
     }
 
     private void rollSneakAttack() {
@@ -203,6 +232,18 @@ public class NinjaCharacter {
 
     private int attackRoll(int d20Result, int modifier) {
         int attackRoll = d20Result + modifier;
+        System.out.println("Advantage? a/d/n");
+        if(scanner.nextLine().equals("a")){
+            int attackRollAd = rollD20() + modifier;
+            if(attackRollAd > attackRoll){
+                return attackRollAd;
+            }
+        }else if(scanner.nextLine().equals("d")){
+            int attackRollAd = rollD20() + modifier;
+            if(attackRollAd < attackRoll){
+                return attackRollAd;
+            }
+        }
         return attackRoll;
     }
 

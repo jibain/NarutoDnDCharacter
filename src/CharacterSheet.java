@@ -8,6 +8,13 @@ public class CharacterSheet {
      Background: Hunter
      Clan/Village: Uchiha
 
+     Strength: 12 +1
+     Dexerity: 12 +5
+     Constitution: 13 +1
+     Intelligence: 16 + 3
+     Wisdom: 14 + 2
+     Charisma: 10 +0
+
      Bonuses:
      Proficiency: +4
      Save DC: 15
