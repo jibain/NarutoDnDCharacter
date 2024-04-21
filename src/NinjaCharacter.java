@@ -20,7 +20,7 @@ public class NinjaCharacter {
                     rollD20AndDisplayResult();
                     break;
                 case "init":
-                    int initRoll = rollD20() + 5;
+                    int initRoll = rollD20() + 5 + profBonus;
                     System.out.println("Initiative roll: " + initRoll);
                     break;
                 case "skill":
@@ -233,16 +233,19 @@ public class NinjaCharacter {
     private int attackRoll(int d20Result, int modifier) {
         int attackRoll = d20Result + modifier;
         System.out.println("Advantage? a/d/n");
-        if(scanner.nextLine().equals("a")){
+        String ad = scanner.nextLine();
+        if(ad.equals("a")){
             int attackRollAd = rollD20() + modifier;
             if(attackRollAd > attackRoll){
                 return attackRollAd;
             }
-        }else if(scanner.nextLine().equals("d")){
+        }else if(ad.equals("d")){
             int attackRollAd = rollD20() + modifier;
             if(attackRollAd < attackRoll){
                 return attackRollAd;
             }
+        }else{
+            return attackRoll;
         }
         return attackRoll;
     }
