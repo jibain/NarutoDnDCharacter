@@ -9,15 +9,15 @@ public class CharacterSheet {
      Clan/Village: Uchiha
 
      Bonuses:
-     Proficiency: +3
-     Save DC: 13
-     Ninjutsu Attack: +5
+     Proficiency: +4
+     Save DC: 15
+     Ninjutsu Attack: +7
      GENJUTSU
-     Genjutsu save DC = 13
-     Genjutsu attack modifier = +5
+     Genjutsu save DC = 14
+     Genjutsu attack modifier = +6
      TAIJUTSU
-     Taijutsu save DC = 12
-     Taijutsu attack modifier = +4
+     Taijutsu save DC = 13
+     Taijutsu attack modifier = +5
 
      Proficient Skills:
      Stealth
@@ -26,6 +26,9 @@ public class CharacterSheet {
      Investigation
 
      Equipment:
+     1 scroll of Amaterasu
+     1 scroll of Susano'o
+     1 scroll of Multi Shadow Clone Jutsu
      Kunai
      Shuriken
      Explosive Tags
